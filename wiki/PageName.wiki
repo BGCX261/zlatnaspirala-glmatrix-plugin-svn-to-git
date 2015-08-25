@@ -1,0 +1,141 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Project  website url :http://www.zlatnaspirala.netfast.org
+
+API document url :http://www.zlatnaspirala.netfast.org/HelpAPIdocument.php
+
+
+= Details =
+
+version 0.1
+
+API example:
+
+>>>>>EDIT zlatnaspirala/draw.js
+
+ function drawScene() {
+	
+		 if (tempX <= 10){alfa = alfa - 3;}
+	   	 if (tempX >= 400){alfa = alfa + 3;}
+
+        gl.bindFramebuffer(gl.FRAMEBUFFER, rttFramebuffer);
+        drawSceneOnLaptopScreen();
+        gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+        gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
+        mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 500.0, pMatrix);
+        mat4.identity(mvMatrix);
+	//############################################################################
+	//############################################################################
+	//############################################################################
+	//               put your functions here      glmatrix plugin zlatnaspira
+	//############################################################################
+	
+		LAPTOP();			
+	
+		SKY(0,22.5,70,sky1);
+		 
+		DEADFLOOR(0,0,0,sky1);
+		DEADBLADE(10,2,0,sky1);
+		 
+		CUBE(0,5,30,zlatnaspirala);
+		BLADEROTATE(0,6,30,greenmatrix1); 
+		BLADEROTATEDEGX(0,4,30,greenmatrix1,180);
+		
+		BLOCK(0,0,0,floor);
+		BLOCK(30,0,0,floor);
+		BLOCK(60,0,0,floor);
+		BLOCK(90,0,0,floor);
+		BLOCK(90,0,30,floor);
+		BLOCK(90,0,60,floor);
+		BLOCK(90,0,90,floor);
+		BLOCK(90,0,120,floor);
+		
+		BLOCK(60,0,60,floor);
+		BLOCK(30,0,60,floor);
+		BLOCK(0,0,60,floor);
+		BLOCK(-30,0,60,floor);
+		BLOCK(-60,0,60,floor);
+		
+		BLOCK(-30,0,0,floor);
+		BLOCK(-60,0,0,floor);
+		BLOCK(-90,0,0,floor);
+		BLOCK(-90,0,30,floor);
+		BLOCK(-90,0,60,floor);
+		BLOCK(-90,0,90,floor);
+		BLOCK(-90,0,120,floor);
+		
+		BLADEGREEN(-15,0,-15,greenglass);    
+		BLADEGREEN(15,0,-15,greenglass);    
+		BLADEGREEN(-15,0,15,greenglass);    
+		BLADEGREEN(15,0,15,greenglass);  
+		
+		XWALL(0,0.7,-15.7,barrier);
+		XWALL(30,0.7,-15.7,barrier);
+		XWALL(60,0.7,-15.7,barrier);
+		XWALL(90,0.7,-15.7,barrier);
+		XWALL(-30,0.7,-15.7,barrier);
+		XWALL(-60,0.7,-15.7,barrier);
+		XWALL(-90,0.7,-15.7,barrier);
+		
+		XWALL(0,0.7,134.2,barrier);
+		XWALL(30,0.7,134.2,barrier);
+		XWALL(60,0.7,134.2,barrier);
+		XWALL(90,0.7,134.2,barrier);
+		XWALL(-30,0.7,134.2,barrier);
+		XWALL(-60,0.7,134.2,barrier);
+		XWALL(-90,0.7,134.2,barrier);
+		
+		ZWALL(-105.7,0.7,0,barrier);
+		ZWALL(-105.7,0.7,30,barrier);
+		ZWALL(-105.7,0.7,60,barrier);
+		ZWALL(-105.7,0.7,90,barrier);
+		ZWALL(-105.7,0.7,120,barrier);
+		
+		ZWALL(104,0.7,0,barrier);
+		ZWALL(104,0.7,30,barrier);
+		ZWALL(104,0.7,60,barrier);
+		ZWALL(104,0.7,90,barrier);
+		ZWALL(104,0.7,120,barrier);
+		  
+		PILEY(76,0,45,barrier);
+		PILEY(80,0,45,barrier); 
+		PILEY(84,0,45,barrier);
+		PILEY(88,0,45,barrier);
+		PILEY(92,0,45,barrier);
+		PILEY(96,0,45,barrier);
+		PILEY(100,0,45,barrier);
+		PILEY(104,0,45,barrier);
+		
+		red();
+		
+		HOLDERX(90,0.7,2,barrier);
+		MOON(90,3,2);
+		
+        	PILEX(0,0,45,greenglass);
+		
+		red();
+		
+		HOLDERX(6.0,8,13,barrier);
+		PILEY(6,2.69,13.01,barrier);
+                HOLDERY(6.0,18,13,barrier);
+		HOLDERX(6.0,0.7,13,barrier);
+		HOLDERY(6.0,12,13,barrier);
+		
+		HOLDERX(-6.0,8,13,barrier);
+	        PILEY(-6,2.69,13.01,barrier);
+                HOLDERY(-6.0,18,13,barrier);
+		HOLDERX(-6.0,0.7,13,barrier);
+		HOLDERY(-6.0,12,13,barrier);
+		
+		CANAL(floor);//not work in this version!IMPORT json
+		green();
+		
+		HOLDERLEFT(-13.0,4,36,barrier);		
+		HOLDERRIGHT(-16.0,4,36,barrier);	
+	//############################################################################
+	//############################################################################
+	//############################################################################
+	}
